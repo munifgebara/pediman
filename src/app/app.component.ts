@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  items = [
+    {
+      label: 'Cancelar', icon: 'fa-close'
+
+    },
+    {
+      label: 'Correr', icon: 'fa-close'
+
+    }
+
+  ];
 }

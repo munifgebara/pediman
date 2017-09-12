@@ -9,7 +9,7 @@ import { ToolbarModule,ButtonModule,SplitButtonModule} from 'primeng/primeng';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CategoriasModule } from './categorias/categorias.module';
-
+import { ProdutosModule } from './produtos/produtos.module';
 
 import { AppComponent } from './app.component';
 import { PanelModule } from "primeng/components/panel/panel";
@@ -23,6 +23,7 @@ import { InicialComponent } from './inicial/inicial.component';
   imports: [
     BrowserModule,
     CategoriasModule,
+    ProdutosModule,
 
 
     AppRoutingModule,

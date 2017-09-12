@@ -7,15 +7,24 @@ import { AccordionModule,GrowlModule, DataListModule} from 'primeng/primeng';   
 import { ToolbarModule,ButtonModule,SplitButtonModule} from 'primeng/primeng';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { CategoriasModule } from './categorias/categorias.module';
+
+
 import { AppComponent } from './app.component';
 import { PanelModule } from "primeng/components/panel/panel";
+import { InicialComponent } from './inicial/inicial.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicialComponent
   ],
   imports: [
     BrowserModule,
+    CategoriasModule,
+
+
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,

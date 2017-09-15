@@ -15,6 +15,10 @@ import { AppComponent } from './app.component';
 import { PanelModule } from "primeng/components/panel/panel";
 import { InicialComponent } from './inicial/inicial.component';
 
+import { CategoriaService } from './categorias/categoria.service'; 
+import { ProdutoService } from "./produtos/produto.service";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +28,12 @@ import { InicialComponent } from './inicial/inicial.component';
     BrowserModule,
     CategoriasModule,
     ProdutosModule,
-
-
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
     AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule,PanelModule
   ],
-  providers: [],
+  providers: [CategoriaService,ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

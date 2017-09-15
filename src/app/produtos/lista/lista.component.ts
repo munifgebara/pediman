@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoService } from '../produto.service';
+
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  lista=[];
+  
+    constructor(private produtoService:ProdutoService) { }
+  
+    ngOnInit() {
+      this.atualiza();
+    }
+  
+    atualiza(){
+      this.lista=this.produtoService.getAll();
+    }
+  
+    excluir(id){
+      console.log('excluindo',id);
+      this.produtoService.delete(id);
+      this.atualiza();
+      console.log(this.lista);
+    }
 }

@@ -1,3 +1,12 @@
-<p>
-  lista categorias works!
-</p>
+<p-dataTable [value]="lista">
+  <p-column field="id" header="Código"></p-column>
+  <p-column field="nome" header="Nome"></p-column>
+  <p-column styleClass="col-button">
+    <ng-template pTemplate="header">
+        <button type="button" pButton icon="fa-refresh"></button>
+    </ng-template>
+    <ng-template let-obj="rowData" pTemplate="body">
+        <button type="button" pButton (click)="excluir(obj.id)" label="Remover"></button>
+    </ng-template>
+</p-column>
+</p-dataTable>

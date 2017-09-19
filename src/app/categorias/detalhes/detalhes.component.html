@@ -1,3 +1,14 @@
-<p>
-  detalhes works!
-</p>
+<p-panel>
+<span class="ui-float-label">
+    <input id="NOME" type="text" size="30" pInputText [(ngModel)]="selecionado.nome"> 
+    <label for="NOME">Nome</label>
+</span>
+</p-panel>
+<p-panel>
+<button type="button" pButton (click)="salvar()" label="Salvar"></button>
+<button type="button" pButton (click)="cancelar()" label="Cancelar"></button>
+ 
+</p-panel>
+
+<span id="text">{{selecionado|json}}</span>
+

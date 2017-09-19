@@ -4,9 +4,11 @@
   <p-column styleClass="col-button">
     <ng-template pTemplate="header">
         <button type="button" pButton icon="fa-refresh"></button>
+        <button type="button" pButton icon="fa-add" (click)="novo()"></button>
     </ng-template>
     <ng-template let-obj="rowData" pTemplate="body">
-        <button type="button" pButton (click)="excluir(obj.id)" label="Remover"></button>
+        <button type="button" pButton (click)="excluir(obj)" label="Remover"></button>
+        <button type="button" pButton (click)="editar(obj)" label="Editar"></button>
     </ng-template>
 </p-column>
 </p-dataTable>

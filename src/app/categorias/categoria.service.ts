@@ -50,6 +50,9 @@ export class CategoriaService {
   }
 
   getOne(id){
+    if(id=='new'){
+      return {id:'new'};
+    }
     for (let i=0;i<this.lista.length;i++){
       if (this.lista[i].id===id){
         return this.lista[i];

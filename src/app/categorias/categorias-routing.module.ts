@@ -10,7 +10,7 @@ const routes: Routes = [
     component:CrudComponent,
     children:[
       { path:'',component:ListaComponent },
-      { path:'detalhes',component:DetalhesComponent },
+      { path:'detalhes/:id',component:DetalhesComponent },
     ]
   }
 ];

@@ -13,9 +13,16 @@ import { ProdutosModule } from './produtos/produtos.module';
 
 import { AppComponent } from './app.component';
 import { PanelModule } from "primeng/components/panel/panel";
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+
 import { InicialComponent } from './inicial/inicial.component';
 
-import { CategoriaService } from './categorias/categoria.service'; 
+
+import { CategoriaService } from './categorias/categoria.fb.service'; 
 import { ProdutoService } from "./produtos/produto.service";
 
 
@@ -31,7 +38,11 @@ import { ProdutoService } from "./produtos/produto.service";
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule,PanelModule
+    AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule,PanelModule,
+    AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), // imports firebase/app needed for everything
+    AngularFireDatabaseModule, // imports firebase/database, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+
   ],
   providers: [CategoriaService,ProdutoService],
   bootstrap: [AppComponent]

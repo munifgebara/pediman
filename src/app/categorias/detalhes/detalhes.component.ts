@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { CategoriaService } from "../categoria.service";
+import { CategoriaService } from "../categoria.fb.service";
 
 @Component({
   selector: 'app-detalhes',
@@ -20,8 +20,7 @@ export class DetalhesComponent implements OnInit {
   ngOnInit() {
     let id=this.route.snapshot.params.id;
     console.log(id);
-    this.selecionado=this.categoriaService.getOne(id);
-    console.log(this.selecionado);
+    this.categoriaService.getOne(id).then(r=>this.selecionado=r);
   }
 
   cancelar() {
@@ -29,7 +28,7 @@ export class DetalhesComponent implements OnInit {
   }
   
   salvar() {
-    if (this.selecionado['id']=='new') {
+    if (this.selecionado['novo']) {
       this.categoriaService.add(this.selecionado);
     }
     else {
